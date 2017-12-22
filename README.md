@@ -13,16 +13,14 @@ When the A2HS banner is shown, you can tap into the *beforeinstallprompt* event 
 The code below shows this in action:
 
     window.addEventListener('beforeinstallprompt', function(event) {
-	  event.userChoice.then(function(result) {						
- 
-    if(result.outcome == 'dismissed') {							
-      // They dismissed, send to analytics
-    }
-    else {
-      // User accepted! Send to analytics
-    }
-  });
-});
+      event.userChoice.then(function(result) {						
+        if(result.outcome === 'dismissed') {							
+          // They dismissed, send to analytics
+        } else {
+          // User accepted! Send to analytics
+        }
+      });
+    });
  
 Using the code above, you can determine if the user dismissed the banner or if they decided to add your web app to their home screen. Using a web analytics package, you’ll be able to track their choice and hopefully determine if this functionality is beneficial to your users.
  
